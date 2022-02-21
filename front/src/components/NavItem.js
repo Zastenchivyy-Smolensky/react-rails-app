@@ -1,0 +1,15 @@
+import React from 'react'
+import { NavLink } from 'react-router-dom'
+
+function NavItem({Icon,title}) {
+  return (
+    <div>
+       <NavLink to={title.toLowerCase()} className="flex flex-col items-center cursor-pointer group w-20" activeClassName="text-red-600">
+      <Icon size={40} className=" mb-1 mr-1 " />
+      <p className="font-semibold opacity-0 group-hover:opacity-100">{title}</p>
+    </NavLink>
+    </div>
+  )
+}
+
+export default NavItem

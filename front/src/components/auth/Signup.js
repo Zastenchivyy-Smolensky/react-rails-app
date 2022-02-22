@@ -1,5 +1,5 @@
 import React from 'react'
-import Registrations from './auth/Registrations'
+import Registrations from './Registrations'
 
 function Signup(props) {
     const handleSuccessfulAuthentication = (data) => {

@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import Dashboard from './components/Dashboard'
-import Home from './components/Home'
+import Dashboard from '../Dashboard'
+import Home from './Home'
 import {BrowserRouter, Switch, Route} from "react-router-dom"
-import Signup from './components/Signup'
-import Signin from './components/Signin'
+import Signup from './Signup'
+import Signin from './Signin'
 import axios from 'axios'
-import Navbar from './components/Navbar'
+import Navbar from './style/Navbar'
+import TodoList from '../todos/TodoList'
+
 function App() {
   const [loggedInStatus, setLoggedInStatus] = useState("未ログイン")
   const [user, setUser] = useState({})
@@ -45,6 +47,7 @@ function App() {
             <div className="w-11/12 h-5/6 md:w-9/12 md:h-5/6">
             <Navbar/>
             <Switch>
+              
             <Route exact path={"/Home"} component={Home} />
               <Route exact path={"/signin"}
                 render ={props => (
@@ -60,6 +63,7 @@ function App() {
                     <Signup {...props} handleLogin={handleLogin} loggedInStatus={loggedInStatus} />
                       )}
             />
+            <Route exact path={"/todos"} component={TodoList} />
             </Switch>
           </div>
         </div>
